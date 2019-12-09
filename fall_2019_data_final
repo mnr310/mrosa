@@ -1,0 +1,35 @@
+#install package janitory to clean up dataset
+install.packages(janitor)
+install.packages(tidyverse)
+install.packages(dplyr)
+
+#installed R packages
+library(tidyverse)
+library(dplyr)
+library(janitor)
+
+# import a csv using read_csv()
+Excel_PLUTO_SLIM<- read_csv('Excel_PLUTO_SLIM.csv')
+
+# use View() to see a tabular view of the data
+View(Excel_PLUTO_SLIM)
+
+#remove null values in lotarea
+PLUTO_no_NA <- Excel_PLUTO_SLIM %>% filter(!is.na(lotarea))
+
+#sum up lotarea column in QNS
+sum_lotarea = sum(PLUTO_no_NA$lotarea)
+sum_lotarea
+#Total QNS LotAreas = 239,5631,132 sqft
+
+
+# get only bldgclass classified Z8 for Cemetery
+Z8 <-filter(PLUTO_no_NA, bldgclass =='Z8')
+
+#sum up Z8 lotarea
+Z8_sum = sum(Z8$lotarea)
+Z8_sum
+#Total Z8 LotAreas = 81,694,579 sqft
+
+#Z8-Cemetery lotarea makeup in QNs
+cemetery_makeup = (Z8_sum/sum_lotarea)
