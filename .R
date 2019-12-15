@@ -1,7 +1,7 @@
 #PLUTO file downloaded from: https://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page
 #Code was run in RStudio Desktop since PLUTO file was too large for RStudio Cloud
 
-#install package janitory to clean up dataset
+#install package janitor to clean up dataset
 install.packages(janitor)
 install.packages(tidyverse)
 install.packages(dplyr)
