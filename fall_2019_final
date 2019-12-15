@@ -12,7 +12,7 @@ library(dplyr)
 library(janitor)
 
 # import a csv using read_csv()
-Excel_PLUTO_SLIM<- read_csv('Excel_PLUTO_SLIM.csv')
+Excel_PLUTO_SLIM<- read_csv('PLUTO_SLIM.csv')
 
 # use View() to see a tabular view of the data
 View(Excel_PLUTO_SLIM)
